@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: client-service
+  sleuth:
+    sampler:
+      probability: 2.0
+  zipkin:
+    enabled: true
+feign:
+  circuitbreaker:
+    enabled: true
+
+server:
+  port: 8082
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true

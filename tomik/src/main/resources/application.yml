@@ -1,0 +1,21 @@
+server:
+  port: 8093
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+spring:
+  cloud:
+    discovery:
+      enabled: true
+      service-id: config-server
+  application:
+    name: book-service
+  config:
+    import: "optional:configserver:"
+  profiles:
+    active: native
+

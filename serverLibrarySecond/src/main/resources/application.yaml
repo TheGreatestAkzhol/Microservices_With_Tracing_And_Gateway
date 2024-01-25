@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: client-service
+
+server:
+  port: 8667
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true
+
+
+book-service:
+  url: http://localhost:8093/
